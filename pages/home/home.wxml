@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<text>{{num}}</text>
+<button bindtap="go">点我</button>
+
