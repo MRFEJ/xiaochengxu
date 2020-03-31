@@ -15,7 +15,7 @@ Page({
         // 发起网络请求
         // console.log(code)
         wx.request({
-          url: 'http://localhost:3000/api/user/wxlogin',
+          url: 'http://192.168.1.82:3000/api/user/wxlogin',
           method: "POST",
           data: {
             code,
@@ -25,15 +25,15 @@ Page({
           success: res => {
             // console.log(res);
             const {
-              data
-            } = res
+              message,status,token
+            } = res .data
             // console.log(data)
             wx.showToast({
-              title: data.message,
+              title: message,
               icon: "none"
             })
-            if (data.status === 0) {
-              wx.setStorageSync('my_token', data.token);
+            if (status === 0) {
+              wx.setStorageSync('my_token', token);
               wx.reLaunch({
                 url: "/pages/home/home"
               })
@@ -44,6 +44,11 @@ Page({
       fail: err => {
         console.log("...code...调用失败")
       }
+    })
+  },
+  phoneLogin(){
+    wx.navigateTo({
+      url:"../phoneLogin/phoneLogin"
     })
   }
 })

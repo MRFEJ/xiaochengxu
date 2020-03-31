@@ -1,74 +1,25 @@
-// pages/home/home.js
+import {
+  query
+} from "../../utils/query"
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    num:666
+    swiperList: []
   },
-
-  go:function(){
-    this.setData({
-      num:6
+  onShow() {
+    this.lunbo()
+  },
+  lunbo() {
+    query({
+      url: "home/swipers"
+    }).then(({
+      data: {
+        message
+      }
+    }) => {
+      // console.log(message)
+      this.setData({
+        swiperList: message
+      })
     })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function () {
-    // console.log('home-onLoad')
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    // console.log('home-onReady')
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    // console.log('home-onShow')
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    // console.log('home-onHide')
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    // console.log('home-onUnload')
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

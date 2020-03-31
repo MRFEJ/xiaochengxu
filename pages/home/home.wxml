@@ -1,4 +1,10 @@
 <!--pages/home/home.wxml-->
-<text>{{num}}</text>
-<button bindtap="go">点我</button>
-
+<view class="home-container ">
+	<swiper indicator-dots circular autoplay interval="{{3000}}" duration="{{1500}}">
+		<block wx:for="{{swiperList}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item.img_url}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
