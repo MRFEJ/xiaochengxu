@@ -5,7 +5,8 @@
     "pages/home/home",
     "pages/course/course",
     "pages/study/study",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,7 +14,6 @@
     "navigationBarTitleText": "酷丁鱼课堂",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#666",
@@ -39,5 +39,10 @@
       "iconPath": "./assets/tabs/icon_my@2x.png",
       "selectedIconPath": "./assets/tabs/icon_my_selected@2x.png"
     }]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

@@ -6,7 +6,7 @@ App({
       // Do something with return value
       // console.log(value)
       wx.reLaunch({
-        url: "/pages/home/home"
+        url: "./pages/home/home"
       })
     }
   }

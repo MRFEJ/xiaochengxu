@@ -1,0 +1,12 @@
+/* pages/search/search.wxss */
+.search_box{
+     display: flex;
+     align-items: center;
+}
+.search{
+     flex: 12;
+}
+.search_qx{
+     color: #ff9822;
+     flex: 2;
+}

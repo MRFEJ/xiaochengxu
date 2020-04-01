@@ -1,0 +1,12 @@
+<view class="search_box">
+<van-search
+class="search"
+  value="{{ value }}"
+  shape="round"
+  background="#fff"
+  bind:change="search"
+  bind:focus="focus"
+  placeholder="请输入搜索关键词"
+/>
+<text class="search_qx" hidden="{{!isok}}" bindtap="search_qx">取消</text>
+</view>

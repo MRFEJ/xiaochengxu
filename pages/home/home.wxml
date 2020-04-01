@@ -1,5 +1,8 @@
 <!--pages/home/home.wxml-->
 <view class="home-container ">
+<!-- 搜索组件 -->
+<search-bar placeholder="请输入课程名称"></search-bar>
+<!-- 轮播 -->
 	<swiper indicator-dots circular autoplay interval="{{3000}}" duration="{{1500}}">
 		<block wx:for="{{swiperList}}" wx:key="*this">
 			<swiper-item>
@@ -7,4 +10,28 @@
 			</swiper-item>
 		</block>
 	</swiper>
+	<view>
+		<view class="tips">
+			<text class="tip">推荐课程</text>
+			<image src="/assets/images/arrow@2x.png"></image>
+		</view>
+		<scroll-view class="course-container" scroll-x="true">
+			<view class="course-item" wx:for="{{tjList}}" wx:key="*this">
+				<image src="{{item.icon}}"></image>
+			</view>
+		</scroll-view>
+	</view>
+	<view>
+		<view class="tips">
+			<text class="tip">热门视频</text>
+			<image src="/assets/images/arrow@2x.png"></image>
+		</view>
+		<view class="hot-video">
+			<view class="video-item" wx:for="{{hotVideo}}" wx:key="*this">
+				<image src="{{item.cover_photo_url}}"></image>
+				<text class="title">{{item.name}}</text>
+				<text class="subtitle">{{item.view_count}}人已观看</text>
+			</view>
+		</view>
+	</view>
 </view>

@@ -1,7 +1,5 @@
 // pages/phoneLogin/phoneLogin.js
-import {
-     query
-} from "../../utils/query"
+import query from "../../utils/query"
 Page({
 
      /**
