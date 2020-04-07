@@ -1,32 +1,45 @@
 // pages/search/search.js
+import query from "../../utils/query"
 Page({
-
      /**
       * 页面的初始数据
       */
      data: {
+          // 课程
+          courses:[],
           // 输入框的值
           value: "",
-          isok:false
+          isok: false
      },
-     // change事件
-     search(e) {
-          console.log(e)
+     // 回车事件
+     async search(e) {
+          // console.log(e)
           this.setData({
-               value :e.detail
+               value: e.detail
+          })
+          let res = await query({
+               url: "course/search",
+               data: {
+                    name: this.data.value
+               }
+          })
+          // console.log(res)
+          this.setData({
+               courses:res.data.message
           })
      },
      // 获取焦点事件
-     focus(){
+     focus() {
           this.setData({
-               isok:true
+               isok: true
           })
      },
      // 点击取消
-     search_qx(){
+     search_qx() {
+          // console.log(111)
           this.setData({
-               isok:false,
-               value:""
+               isok: false,
+               value: ""
           })
      },
 })

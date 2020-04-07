@@ -70,6 +70,20 @@
 					"id": -1,
 					"name": "搜索页面",
 					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学习页面",
+					"pathName": "pages/study/study",
 					"scene": null
 				}
 			]

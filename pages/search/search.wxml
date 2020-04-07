@@ -2,11 +2,17 @@
 <van-search
 class="search"
   value="{{ value }}"
-  shape="round"
   background="#fff"
-  bind:change="search"
+  bind:search="search"
   bind:focus="focus"
   placeholder="请输入搜索关键词"
 />
-<text class="search_qx" hidden="{{!isok}}" bindtap="search_qx">取消</text>
+<text class="search_qx" wx:if="{{isok}}" bindtap="search_qx">取消</text>
 </view>
+	<view class="search-body">
+		<view class="empty" wx:if="{{courses.length === 0}}">
+			<text class="title">暂无内容哦~</text>
+		</view>
+		<course-list courses="{{courses}}"></course-list>
+	</view>
+

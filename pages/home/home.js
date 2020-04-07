@@ -37,7 +37,7 @@ async hotVideo(){
   })
   // console.log(res)
   if(res.data.status==0){
-    console.log(11)
+    // console.log(11)
 this.setData({
   hotVideo:res.data.message
 })

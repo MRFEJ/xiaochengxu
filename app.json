@@ -3,10 +3,11 @@
     "pages/login/login",
     "pages/phoneLogin/phoneLogin",
     "pages/home/home",
-    "pages/course/course",
     "pages/study/study",
     "pages/my/my",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/course/course",
+    "pages/course-detail/course-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

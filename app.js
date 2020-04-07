@@ -1,13 +1,12 @@
 //app.js
 App({
-  onLaunch: function () {
-    var value = wx.getStorageSync('my_token')
-    if (value) {
-      // Do something with return value
-      // console.log(value)
-      wx.reLaunch({
-        url: "./pages/home/home"
-      })
-    }
-  }
+  // onLaunch: function () {
+  //   if (wx.getStorageSync('my_token')) {
+  //     // Do something with return value
+  //     // console.log(value)
+  //     wx.reLaunch({
+  //       url: "./pages/home/home"
+  //     })
+  //   }
+  // }
 })

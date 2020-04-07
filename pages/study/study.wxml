@@ -1,2 +1,21 @@
-<!--pages/study/study.wxml-->
-<text>pages/study/study.wxml</text>
+<view class="study-container">
+	<view class="no-study-tip" wx:if="{{studyList.length==0}}">您还没有任何学习记录哦,赶紧去学习吧~</view>
+	<view wx:else>
+		<view class="study-item" wx:for="{{studyList}}" wx:key="*this">
+			<image src="{{item.icon}}"></image>
+			<view class="meta">
+				<text class="title">{{item.title}}</text>
+				<text class="progress">已学习{{item.study_hour}}课时/{{item.total_hour}}课时</text>
+			</view>
+			<view class="circle">
+				<!-- Circle  -->
+				<!-- <van-circle stroke-width="5" size="50" value="{{ item.study_progress }}" layer-color="#eeeeee" color="{{item.bgc}}">
+					<text style="color:{{item.bgc}};font-weight:500;font-size:12px">{{item.study_progress}}%</text>
+				</van-circle> -->
+
+				<!-- 组件 -->
+				<circle canvas_id="{{item.sid}}" study_progress="{{item.study_progress}}" color="{{item.bgc}}" width="{{55}}" height="{{55}}" />
+			</view>
+		</view>
+	</view>
+</view>

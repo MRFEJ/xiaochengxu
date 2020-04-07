@@ -1,66 +1,37 @@
 // pages/study/study.js
+import query from "../../utils/query"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    studyList: null,
+    bgc: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    let res = await query({
+      url: "study/progress"
+    })
+    if(res.data.status===0){
+    res.data.message.forEach(item => {
+      // console.log(item)
+      if (item.study_progress <= 30) {
+        item.bgc ="#ff0000"
+      } else if (item.study_progress > 30 && item.study_progress <= 70) {
+        item.bgc = "#orange"
+      } else {
+        item.bgc = "#b6d772"
+      }
+    })
+    this.setData({
+      studyList: res.data.message
+    })
 
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

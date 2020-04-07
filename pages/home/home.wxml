@@ -1,24 +1,26 @@
 <!--pages/home/home.wxml-->
 <view class="home-container ">
-<!-- 搜索组件 -->
-<search-bar placeholder="请输入课程名称"></search-bar>
-<!-- 轮播 -->
+	<!-- 搜索组件 -->
+	<search-bar placeholder="请输入课程名称"></search-bar>
+	<!-- 轮播 -->
 	<swiper indicator-dots circular autoplay interval="{{3000}}" duration="{{1500}}">
-		<block wx:for="{{swiperList}}" wx:key="*this">
+		<navigator url="{{'/pages/course-detail/course-detail?id='+item.course_id}}" wx:for="{{swiperList}}" wx:key="*this">
 			<swiper-item>
 				<image src="{{item.img_url}}"></image>
 			</swiper-item>
-		</block>
+		</navigator>
 	</swiper>
 	<view>
 		<view class="tips">
 			<text class="tip">推荐课程</text>
-			<image src="/assets/images/arrow@2x.png"></image>
+			<navigator url="../course/course" open-type="switchTab">
+				<image src="/assets/images/arrow@2x.png"></image>
+			</navigator>
 		</view>
 		<scroll-view class="course-container" scroll-x="true">
-			<view class="course-item" wx:for="{{tjList}}" wx:key="*this">
+			<navigator url="{{'/pages/course-detail/course-detail?id='+item.relation_id}}" class="course-item" wx:for="{{tjList}}" wx:key="*this">
 				<image src="{{item.icon}}"></image>
-			</view>
+			</navigator>
 		</scroll-view>
 	</view>
 	<view>
